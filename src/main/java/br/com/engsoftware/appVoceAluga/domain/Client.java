@@ -10,6 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+
 @Entity(name="clients") 
 @Table(name="clients") 
 public class Client {
@@ -20,6 +23,7 @@ public class Client {
 	
 	private String nomeCompleto;
 	
+	@Temporal(TemporalType.DATE)
 	private Date dataNascimento;
 	
 	@Column(unique=true)
