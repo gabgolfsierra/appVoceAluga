@@ -84,6 +84,19 @@ public class Client {
 	public Client() {
 		
 	}
+	
+	
+
+	public Client(Long id, String nomeCompleto, Date dataNascimento, String cpf, String endereco,
+			String numeroTelefone) {
+		super();
+		this.id = id;
+		this.nomeCompleto = nomeCompleto;
+		this.dataNascimento = dataNascimento;
+		this.cpf = cpf;
+		this.endereco = endereco;
+		this.numeroTelefone = numeroTelefone;
+	}
 
 	public Client(String nomeCompleto, Date dataNascimento, String cpf, String endereco, String numeroTelefone) {
 		super();
