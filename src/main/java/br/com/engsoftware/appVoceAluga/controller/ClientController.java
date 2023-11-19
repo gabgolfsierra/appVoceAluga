@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.engsoftware.appVoceAluga.domain.Client;
 import br.com.engsoftware.appVoceAluga.repository.ClientRepository;
-import ch.qos.logback.core.model.Model;
+
 
 @RestController
 @RequestMapping("/clientes")
@@ -35,7 +35,6 @@ public class ClientController {
 	}
 
 	
-
 	@GetMapping("/")
 	public List<Client> getAllClients() {
 		return clientRepository.findAll();
