@@ -1,6 +1,7 @@
 package br.com.engsoftware.appVoceAluga.domain;
 
-import java.sql.Date;
+
+import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,7 +22,7 @@ public class Funcionario {
 	private String nomeCompleto;
 	
 	@Temporal(TemporalType.DATE)
-	private Date dataNascimento;
+	private LocalDate dataNascimento;
 	
 	 private String cpf;
 	 private String endereco;
@@ -38,7 +39,7 @@ public class Funcionario {
 	 
 	 
 	 
-	public Funcionario(Long id, String nomeCompleto, Date dataNascimento, String cpf, String endereco, String telefone,
+	public Funcionario(Long id, String nomeCompleto, LocalDate dataNascimento, String cpf, String endereco, String telefone,
 			Filial filial, String horarioDeTrabalho, String codigoIdentificacao) {
 		super();
 		this.id = id;
@@ -51,6 +52,11 @@ public class Funcionario {
 		this.horarioDeTrabalho = horarioDeTrabalho;
 		this.codigoIdentificacao = codigoIdentificacao;
 	}
+	
+	public Funcionario() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -63,10 +69,10 @@ public class Funcionario {
 	public void setNomeCompleto(String nomeCompleto) {
 		this.nomeCompleto = nomeCompleto;
 	}
-	public Date getDataNascimento() {
+	public LocalDate getDataNascimento() {
 		return dataNascimento;
 	}
-	public void setDataNascimento(Date dataNascimento) {
+	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 	public String getCpf() {
