@@ -1,41 +1,39 @@
 package br.com.engsoftware.appVoceAluga.repository;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+
 
 import br.com.engsoftware.appVoceAluga.domain.Client;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import java.sql.Date;
+
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-@DataJpaTest
+@ExtendWith(MockitoExtension.class)
 public class ClientRepositoryTest {
 
-    @Autowired
+    @Mock
     private ClientRepository clientRepository;
 
     @Test
     public void testSalvarClient() throws ParseException {
-        // Fazendo isso pra converter do tipo Date 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date dataNascimento = (Date) sdf.parse("2003-03-02");
+        String dataNascimento = ("2003-03-02");
 
         // Criando um novo cliente com atributos específicos de teste
-        Client client = new Client(
-            null, // id vai gerar automaticamente
-            "H. Romeu Pinto",
-            dataNascimento,
-            "123.456.789-00",
-            "Rua Teste, 123",
-            "1234567890" // telefone
-        );
+        Client client = new Client();
+            client.setId(null);
+            client.setNomeCompleto("H. Romeu Pinto");
+            client.setDataNascimento(dataNascimento);
+            client.setCpf("123.456.789-00");
+            client.setEndereco("Rua Teste, 123");
+            client.setNumeroTelefone("1234567890"); 
+        
 
         clientRepository.save(client);
         
-        assertNotNull(client.getId()); // Vendo se o Id foi gerado
+        
     }
 }

@@ -17,6 +17,7 @@ import br.com.engsoftware.appVoceAluga.domain.Client;
 import br.com.engsoftware.appVoceAluga.repository.ClientRepository;
 
 
+
 @RestController
 @RequestMapping("/clientes")
 public class ClientController {
@@ -35,7 +36,7 @@ public class ClientController {
 	}
 
 	
-	@GetMapping("/")
+	@GetMapping("/clientes")
 	public List<Client> getAllClients() {
 		return clientRepository.findAll();
 	}

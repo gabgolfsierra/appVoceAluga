@@ -1,6 +1,6 @@
 package br.com.engsoftware.appVoceAluga.domain;
 
-import java.sql.Date;
+
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -24,7 +24,7 @@ public class Client {
 	private String nomeCompleto;
 	
 	@Temporal(TemporalType.DATE)
-	private Date dataNascimento;
+	private String dataNascimento;
 	
 	@Column(unique=true)
 	private String cpf;
@@ -52,11 +52,11 @@ public class Client {
 		this.nomeCompleto = nomeCompleto;
 	}
 
-	public Date getDataNascimento() {
+	public String getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(Date dataNascimento) {
+	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
@@ -91,7 +91,7 @@ public class Client {
 	
 	
 
-	public Client(Long id, String nomeCompleto, Date dataNascimento, String cpf, String endereco,
+	public Client(Long id, String nomeCompleto, String dataNascimento, String cpf, String endereco,
 			String numeroTelefone) {
 		super();
 		this.id = id;
@@ -102,7 +102,7 @@ public class Client {
 		this.numeroTelefone = numeroTelefone;
 	}
 
-	public Client(String nomeCompleto, Date dataNascimento, String cpf, String endereco, String numeroTelefone) {
+	public Client(String nomeCompleto, String dataNascimento, String cpf, String endereco, String numeroTelefone) {
 		super();
 		this.nomeCompleto = nomeCompleto;
 		this.dataNascimento = dataNascimento;

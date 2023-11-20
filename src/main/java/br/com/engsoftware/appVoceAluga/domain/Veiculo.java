@@ -1,5 +1,7 @@
 package br.com.engsoftware.appVoceAluga.domain;
 
+import java.util.Objects;
+
 import javax.persistence.*;
 
 @Entity
@@ -102,6 +104,15 @@ public class Veiculo {
 		this.filial = filial;
 	}
 
+
+	
+
+
+	
+
    
+	
+	
+	
 }
 
